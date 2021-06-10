@@ -118,3 +118,11 @@ matrix:
     - <<: *cmake-build-test
       name: "CMake blinky example - debug (NRF52840_DK)"
       env: NAME=cmake_test TARGET_NAME=NRF52840_DK PROFILE=debug CACHE_NAME=debug-NRF52840_DK
+
+deploy:
+  provider: releases
+  api_key: "GITHUB OAUTH TOKEN"
+  file: "FILE TO UPLOAD"
+  skip_cleanup: true
+  on:
+    tags: true
